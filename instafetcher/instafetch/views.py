@@ -140,8 +140,6 @@ def fetch2(request):
 def getImages(username):
     L = instaloader.Instaloader()
     loginInfo=Login.objects.get()
-    print(loginInfo.username)
-    print (loginInfo.password)
     L.login(loginInfo.username, loginInfo.password)
     try:
         profile = instaloader.Profile.from_username(L.context, username)
